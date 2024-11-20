@@ -4,6 +4,25 @@
 
 
 <h1>hello world</h1>
+<br/>
+<br/>
 
+<!-- {{ api.low}} -->
 
+  {% if ticker %}
+      {{ ticker }}
+  {% endif %}    
+
+  {% if api %}
+      {% if api == "Error ..." %}
+          there is a problem with your ticker symbol , plz try again...
+      {% else %}
+          <h1>{{ api.name}}</h1><br/>
+          symbol {{ api.symbol}}<br/>
+          exchange {{api.exchange}}<br/>
+          average_volume ${{api.average_volume}}<br/>
+
+  {% endif %}
+
+      {% endif %}
 {% endblock %}
